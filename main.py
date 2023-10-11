@@ -9,7 +9,8 @@
 class BankAccount:
 
     def __init__(self, money, interest_rate):
-        self.money = (money + (money * (interest_rate/100)))
+        self.money = money
+        self.interest_rate = interest_rate
 
     def deposit(self, deposit):
         self.money += deposit
@@ -17,12 +18,15 @@ class BankAccount:
     def withdraw(self, spend):
         self.money -= spend
 
+    def pro(self):
+        return self.money * (self.interest_rate/100)
 
-bank = BankAccount(11500, 10)
 
+bank = BankAccount(10000, 10)
 bank.deposit(10000)
 bank.withdraw(8000)
 print(bank.money)
+print(bank.pro())
 
 
 
